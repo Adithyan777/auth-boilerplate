@@ -1,16 +1,22 @@
-import { Button } from "@/components/ui/button";
+import { validateRequest } from "@/lib/validate-requests";
+import { logout } from "./signout_action";
 
+export default async function Home() {
 
-export default function Home() {
+  const {user} = await validateRequest();
+  console.log(user);
+
   return (
     <>
     <div className="m-4"> Hello, world </div>
-    {/* <Button onclick={async ()=>{
-      "use server"
-      await db.insert().values({name: "Alice",id: 2})
-    }}>
-      Click me
-    </Button> */}
+    {user && 
+    <div className="m-4"> 
+    Welcome, {user.username} 
+    <form action={logout}>
+			<button>Sign out</button>
+		</form>
+    </div>}
+    {!user && <div className="m-4"> Please sign in </div>}
     </>
   );
 }

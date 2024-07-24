@@ -12,6 +12,7 @@
     "db:migrate": "node drizzle/migrate.js"
   },
   "dependencies": {
+    "@lucia-auth/adapter-drizzle": "^1.0.7",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.1",
@@ -21,8 +22,10 @@
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.32.1",
+    "lucia": "^3.2.0",
     "lucide-react": "^0.414.0",
     "next": "14.2.5",
+    "oslo": "^1.2.1",
     "postgres": "^3.4.4",
     "react": "^18.3.1",
     "react-day-picker": "^9.0.3",
