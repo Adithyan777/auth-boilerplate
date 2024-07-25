@@ -43,6 +43,8 @@ export const signup = async ( formData ) => {
     // TODO: check if username is already used
     await db.insert(userTable).values({
         id: userId,
+        firstName : formData.get("first-name"),
+        lastName : formData.get("last-name"),
         username: username,
         password_hash: passwordHash,
     });
@@ -50,5 +52,5 @@ export const signup = async ( formData ) => {
     // const session = await lucia.createSession(userId, {});
     // const sessionCookie = lucia.createSessionCookie(session.id);
     // cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
-    return redirect("/"); // TODO - redirect accordingly
+    return redirect("/login"); // TODO - redirect accordingly
 }

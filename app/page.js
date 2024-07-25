@@ -11,7 +11,7 @@ export default async function Home() {
     <div className="m-4"> Hello, world </div>
     {user && 
     <div className="m-4"> 
-    Welcome, {user.username} 
+    Welcome, {user.firstName} {user.lastName}
     <form action={logout}>
 			<button>Sign out</button>
 		</form>

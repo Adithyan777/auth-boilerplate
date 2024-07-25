@@ -57,7 +57,7 @@ export const login = async (formData) =>{
 		};
 	}
 
-	const session = await lucia.createSession(existingUser.id, {});
+	const session = await lucia.createSession(existingUser.id, {}); // db update here
 	const sessionCookie = lucia.createSessionCookie(session.id);
 	cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
 	return redirect("/");

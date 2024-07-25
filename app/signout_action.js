@@ -12,7 +12,7 @@ export const logout = async () => {
 		};
 	}
 
-	await lucia.invalidateSession(session.id);
+	await lucia.invalidateSession(session.id); // comment this if you want to keep the session details in the db.
 
 	const sessionCookie = lucia.createBlankSessionCookie();
 	cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
